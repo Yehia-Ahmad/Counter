@@ -28,8 +28,6 @@ const Counter = () => {
     }*/
 
     const incrementButtonHandler = () => {
-        console.log(counterActions);
-
         dispatch(counterActions.increament());
     }
 

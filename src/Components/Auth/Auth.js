@@ -1,19 +1,15 @@
 import React from 'react';
-import classes from './Auth.module.css';
 import { authenticationActions } from "../../Store/Store"
 import { useDispatch, useSelector } from 'react-redux';
+import classes from './Auth.module.css';
 
 const Auth = () => {
 
   const dispatch = useDispatch();
   const isAuthentication = useSelector(state => state.Authentication.isAuthentication)
 
-  // const authenticationHandler = () => {
-  // }
-
   const onSubmitHandler = (e) => {
-    e.preventDefault()
-    console.log(authenticationActions);
+    e.preventDefault();
     dispatch(authenticationActions.Login())
   }
 
@@ -29,7 +25,7 @@ const Auth = () => {
             <label htmlFor='password'>Password</label>
             <input type='password' id='password' />
           </div>
-          <button >Login</button>
+          <button>Login</button>
         </form>
       </section>
     </main>
