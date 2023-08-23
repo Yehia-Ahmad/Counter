@@ -11,20 +11,21 @@
     left: 25%;
 }
 
-.container h4 {
+.header {
     color: #4a464d;
 
 }
 
-.container h3 {
+.value {
     color: #31006e;
 }
 
 .container button {
     background-color: #31006e;
+    font-weight: bold;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
     padding: 10px;
-    width: 30%;
+    margin: 1rem;
 }
