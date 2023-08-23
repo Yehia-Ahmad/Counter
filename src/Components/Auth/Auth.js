@@ -1,5 +1,5 @@
 import React from 'react';
-import { authenticationActions } from "../../Store/Store"
+import { authenticationActions } from "../../Store/auth"
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './Auth.module.css';
 
