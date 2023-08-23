@@ -7,8 +7,9 @@ const Counter = () => {
 
 
     const dispatch = useDispatch();
-    const counter = useSelector(state => state.counter);
-    const show = useSelector(state => state.showCounter);
+    const isAuthentication = useSelector(state => state.Authentication.isAuthentication)
+    const counter = useSelector(state => state.Counter.counter);
+    const show = useSelector(state => state.Counter.showCounter);
     /*
     const incrementButtonHandler = () => {
         dispatch({ type: "Increment" })
@@ -27,6 +28,8 @@ const Counter = () => {
     }*/
 
     const incrementButtonHandler = () => {
+        console.log(counterActions);
+
         dispatch(counterActions.increament());
     }
 
@@ -43,21 +46,19 @@ const Counter = () => {
         dispatch(counterActions.toggle())
     }
 
-
-    return (
-        <>
-            <div className={styles.container}>
-                <h1 className={styles.header}>REDUX COUNTER</h1>
-                {show && <h1 className={styles.value}>{counter}</h1>}
-                <div>
-                    <button onClick={incrementButtonHandler}>Increment</button>
-                    <button onClick={increaseButtonHandler}>Increase By 5</button>
-                    <button onClick={decrementButtonHandler}>Decrement</button>
-                </div>
-                <button onClick={toggleHandler}>Toggle Counter</button>
+    const counterComponent = (
+        <div className={styles.container}>
+            <h1 className={styles.header}>REDUX COUNTER</h1>
+            {show && <h1 className={styles.value}>{counter}</h1>}
+            <div>
+                <button onClick={incrementButtonHandler}>Increment</button>
+                <button onClick={increaseButtonHandler}>Increase By 5</button>
+                <button onClick={decrementButtonHandler}>Decrement</button>
             </div>
-        </>
+            <button onClick={toggleHandler}>Toggle Counter</button>
+        </div>
     )
+    return isAuthentication && counterComponent
 }
 
 export default Counter;
